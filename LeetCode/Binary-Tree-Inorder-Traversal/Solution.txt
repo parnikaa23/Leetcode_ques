@@ -1,0 +1,16 @@
+1class Solution {
+2public:
+3typedef TreeNode* tn;
+4void dfsInorder(tn node, vector<int>& ans) {
+5    if(!node) return;
+6    dfsInorder(node->left, ans);
+7    ans.push_back(node->val);
+8    dfsInorder(node->right, ans);
+9}
+10vector<int> inorderTraversal(TreeNode* root) {
+11    vector<int> ans;
+12    dfsInorder(root, ans);
+13    return ans;
+14}
+15};
+16
